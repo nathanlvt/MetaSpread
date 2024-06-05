@@ -1,8 +1,6 @@
 Usage
 =====
 
-Example of autofunction: 
-checking if it works without make html command
-again
+Example of autofunction:
 
 .. autofunction:: metaspread.CancerModel

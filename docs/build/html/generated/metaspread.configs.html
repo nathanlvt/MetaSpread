@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>metaspread &mdash; MetaSpread 2024.0.1 documentation</title>
+  <title>metaspread.configs &mdash; MetaSpread 2024.0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
 
@@ -21,8 +21,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="metaspread.cancercell" href="metaspread.cancercell.html" />
-    <link rel="prev" title="API" href="../api.html" /> 
+    <link rel="next" title="metaspread.datagenerator" href="metaspread.datagenerator.html" />
+    <link rel="prev" title="metaspread.cancermodel" href="metaspread.cancermodel.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -47,10 +47,10 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">API</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">metaspread</a><ul>
+<li class="toctree-l2 current"><a class="reference internal" href="metaspread.html">metaspread</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="metaspread.cancercell.html">metaspread.cancercell</a></li>
 <li class="toctree-l3"><a class="reference internal" href="metaspread.cancermodel.html">metaspread.cancermodel</a></li>
-<li class="toctree-l3"><a class="reference internal" href="metaspread.configs.html">metaspread.configs</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">metaspread.configs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="metaspread.datagenerator.html">metaspread.datagenerator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="metaspread.graphgenerator.html">metaspread.graphgenerator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="metaspread.interactive.html">metaspread.interactive</a></li>
@@ -80,9 +80,10 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../api.html">API</a></li>
-      <li class="breadcrumb-item active">metaspread</li>
+          <li class="breadcrumb-item"><a href="metaspread.html">metaspread</a></li>
+      <li class="breadcrumb-item active">metaspread.configs</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/generated/metaspread.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/generated/metaspread.configs.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -90,40 +91,25 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-metaspread">
-<span id="metaspread"></span><h1>metaspread<a class="headerlink" href="#module-metaspread" title="Link to this heading"></a></h1>
-<p class="rubric">Modules</p>
+  <section id="module-metaspread.configs">
+<span id="metaspread-configs"></span><h1>metaspread.configs<a class="headerlink" href="#module-metaspread.configs" title="Link to this heading"></a></h1>
+<p class="rubric">Functions</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="metaspread.cancercell.html#module-metaspread.cancercell" title="metaspread.cancercell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">metaspread.cancercell</span></code></a></p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_if_configs_are_present</span></code>()</p></td>
+<td><p>Checks if a configs file is present in the current directory</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="metaspread.cancermodel.html#module-metaspread.cancermodel" title="metaspread.cancermodel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">metaspread.cancermodel</span></code></a></p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_default_configs</span></code>()</p></td>
+<td><p>Creates a default simulation_configs.csv file</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="metaspread.configs.html#module-metaspread.configs" title="metaspread.configs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">metaspread.configs</span></code></a></p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_simulation_configs</span></code>(path)</p></td>
+<td><p>Loads the config file, reading the csv given in path, and adding their values to the global scope Returns the names of the values in a list Input:     string: path     return: array of all the names of the variables</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="metaspread.datagenerator.html#module-metaspread.datagenerator" title="metaspread.datagenerator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">metaspread.datagenerator</span></code></a></p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_simulation_configs_for_data_generation</span></code>(path)</p></td>
+<td><p>Loads the config file, reading the csv given in path, and adding their values to the global scope Returns the names of the values in a list Input:     string: path     return: array of all the names of the variables</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="metaspread.graphgenerator.html#module-metaspread.graphgenerator" title="metaspread.graphgenerator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">metaspread.graphgenerator</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="metaspread.interactive.html#module-metaspread.interactive" title="metaspread.interactive"><code class="xref py py-obj docutils literal notranslate"><span class="pre">metaspread.interactive</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="metaspread.quasicircle.html#module-metaspread.quasicircle" title="metaspread.quasicircle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">metaspread.quasicircle</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="metaspread.simrunner.html#module-metaspread.simrunner" title="metaspread.simrunner"><code class="xref py py-obj docutils literal notranslate"><span class="pre">metaspread.simrunner</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="metaspread.vessel.html#module-metaspread.vessel" title="metaspread.vessel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">metaspread.vessel</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="metaspread.videogenerator.html#module-metaspread.videogenerator" title="metaspread.videogenerator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">metaspread.videogenerator</span></code></a></p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_simulation_configs_for_reloaded_simulation</span></code>(path)</p></td>
+<td><p>Loads the config file, reading the csv given in path, and adding their values to the global scope Returns the names of the values in a list Input:     string: path     return: array of all the names of the variables</p></td>
 </tr>
 </tbody>
 </table>
@@ -133,8 +119,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../api.html" class="btn btn-neutral float-left" title="API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="metaspread.cancercell.html" class="btn btn-neutral float-right" title="metaspread.cancercell" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="metaspread.cancermodel.html" class="btn btn-neutral float-left" title="metaspread.cancermodel" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="metaspread.datagenerator.html" class="btn btn-neutral float-right" title="metaspread.datagenerator" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -2,7 +2,8 @@ API
 ===
 
 .. autosummary::
-   :toctree: generated
+    :toctree: generated
+    :recursive:
 
     metaspread
     

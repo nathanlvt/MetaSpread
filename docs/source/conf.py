@@ -1,3 +1,8 @@
+import sys
+import os
+
+sys.path.insert(0, os.path.abspath('../..'))
+
 # Configuration file for the Sphinx documentation builder.
 #
 # For the full list of built-in configuration values, see the documentation:
@@ -21,7 +26,7 @@ extensions = [
    ]
 
 autosummary_generate = True  # Turn on sphinx.ext.autosummary
-autodoc_mock_imports = ["matplotlib","Mesa","numpy","pandas","pynput","opencv_python"]
+# autodoc_mock_imports = ["matplotlib","Mesa","numpy","pandas","pynput","opencv_python"]
 
 
 templates_path = ['_templates']

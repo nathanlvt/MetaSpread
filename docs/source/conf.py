@@ -21,6 +21,8 @@ extensions = [
    ]
 
 autosummary_generate = True  # Turn on sphinx.ext.autosummary
+autodoc_mock_imports = ["matplotlib","Mesa","numpy","pandas","pynput","opencv_python"]
+
 
 templates_path = ['_templates']
 exclude_patterns = []

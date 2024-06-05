@@ -1,2 +1,8 @@
 sphinx==7.1.2
 sphinx-rtd-theme==2.0.0
+matplotlib==3.8.0
+Mesa==2.1.2
+numpy==1.26.0
+pandas==2.1.1
+pynput==1.7.6
+opencv_python==4.8.1.78

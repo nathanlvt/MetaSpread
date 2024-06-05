@@ -1,5 +1,5 @@
 Usage
-===
+=====
 
 Example of autofunction: 
 

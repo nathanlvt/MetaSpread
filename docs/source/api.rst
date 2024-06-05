@@ -5,4 +5,4 @@ API
    :toctree: generated
 
     metaspread
-    usage
+    

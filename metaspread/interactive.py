@@ -95,8 +95,6 @@ def postprocessing_menu():
             videogenerator.generate_videos(selected_simulation, frame_rate)
             time.sleep(3)
 
-
-
 def graphical_analysis_menu(selected_simulation):
     global selected_option, selected_option_index, banner_message, options_list
     directory_path = "Simulations"

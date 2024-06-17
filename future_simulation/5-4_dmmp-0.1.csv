@@ -7,13 +7,13 @@ dM,0.0001
 dE,5e-05
 phiM,0.0005
 phiE,0.0005
-dmmp,0.001
+dmmp,0.0001
 theta,0.195
 Lambda,0.1
 gamma1,1
-gamma2,1
-vasculature_time,180
-doubling_time_M,2000
+gamma2,1  
+vasculature_time,180 
+doubling_time_M,2000 
 doubling_time_E,3000
 single_cell_survival,0.0005
 cluster_survival,0.025
@@ -30,5 +30,3 @@ grids_number,3
 mesenchymal_proportion,0.6
 epithelial_proportion,0.4
 number_of_initial_cells,388
-max_steps,40000
-data_collection_period,150

@@ -31,6 +31,8 @@ Usage
 
 The program can be run both interactively through the command line, or with explicit user command line arguments.
 
+
+.. image:: postprocessing_menu.png
 When run interactively, starting from the main menu, the following possibilities are offered: 
 
 - **Run a new simulation:** the user can choose the *New Simulation* option to run a new simulation, with the arguments to be specified by the user being the maximal time for the dynamics, and the frequency of saving data (temporal resolution). Any other simulation parameter (see  Table \ref{table} ) will be taken from the *simulation\_configs.csv* file in the main folder. At the end of the simulation the dynamics of the grids, including agents (cells and vasculature points), the vasculature dynamics and the MMP2 and ECM are saved in a properly identified directory, including a *configs.csv* recording the used parameters for this particular simulation. The file *CellsData.csv* in this directory will include all the information of all cells and vasculature points in the simulation, for every time step.
@@ -41,15 +43,15 @@ When run interactively, starting from the main menu, the following possibilities
   
   - The folder *Time when grids got populated* will have a file that will simply show the time step for which each grid (primary or secondary site) got populated.
 
-  - When running from the commandline, the user can use `python -m metaspread run max-steps temporal-resolution`. For example, the command `python -m metaspread run 40000 150` would run a simulation for 40000 steps and saving the results every 150 steps.
+  - When running from the commandline, the user can use ``python -m metaspread run max-steps temporal-resolution``. For example, the command `python -m metaspread run 40000 150` would run a simulation for 40000 steps and saving the results every 150 steps.
 
-  - The temporal resolution has to be always less or equal to `vasculature_time`. If not, it will not be possible to see the dynamics of the vasculature correctly, as the cells can intravasate and extravasate without being recorded.
+  - The temporal resolution has to be always less or equal to ``vasculature_time``. If not, it will not be possible to see the dynamics of the vasculature correctly, as the cells can intravasate and extravasate without being recorded.
 
-- **Load an existing simulation** The user can select *Load Simulation* from the main menu, and an existing simulation will be loaded, and can be continued for further time steps with the same parameters in its *configs.csv* file. The only parameters that the user has to select are the new temporal resolution and the maximum extra steps for the simulation to run. When running from the commandline, the user can use `python -m metaspread load simulation-folder-name additional-steps temporal-resolution`. It is recommended to use the same temporal resolution as used before.
+- **Load an existing simulation** The user can select *Load Simulation* from the main menu, and an existing simulation will be loaded, and can be continued for further time steps with the same parameters in its *configs.csv* file. The only parameters that the user has to select are the new temporal resolution and the maximum extra steps for the simulation to run. When running from the commandline, the user can use ``python -m metaspread load simulation-folder-name additional-steps temporal-resolution``. It is recommended to use the same temporal resolution as used before.
 
 - **Post-process data from a simulation** The generated *CellsData.csv* contains the information of every cancer cell at every time step and every grid of the simulation. In order to facilitate the study of the results, we provide the user with several post-processing options: Data analysis, Graphical analysis and Video generation. 
   
-  ![](postprocessing_menu.png)
+  .. image:: postprocessing_menu.png
 
 
 - **Data analysis:** several results will be summarized in *.csv* files, such as the vasculature and tumor dynamics. 
@@ -60,13 +62,13 @@ When run interactively, starting from the main menu, the following possibilities
   
   - The histogram files summarize the spatial distribution of cells for each time point. Each file consists of two columns: one for the bins, and one for the frequency. The bins represent the possible number of cells in each grid point, from 0 to $Q$, and the frequency the number of grid points that have that amount cells.
 
-  - When running from the commandline, the user can use `python -m metaspread postprocess data simulation-folder-name`
+  - When running from the commandline, the user can use ``python -m metaspread postprocess data simulation-folder-name``
 
-- **Graphical analysis:** in order to run this step, it is necessary to run the data analysis option first. When selected, the used will be prompted to introduce the number of figures to describe the snapshot of the dynamics at equally spaced intervals between 0 and the final time of the simulation. Then, plots of the tumor distribution, ECM, MMP-2 for each grid. Furthermore, it will also produce other plots such as the dynamics of the cells in the vasculature, histograms of the cell number distribution over grid points, radius and diameter of the tumor over time, and total size of the tumor in each grid. When running from the commandline, the user can use `python -m metaspread postprocess graphics simulation-folder-name amount-of-figures`.
+- **Graphical analysis:** in order to run this step, it is necessary to run the data analysis option first. When selected, the used will be prompted to introduce the number of figures to describe the snapshot of the dynamics at equally spaced intervals between 0 and the final time of the simulation. Then, plots of the tumor distribution, ECM, MMP-2 for each grid. Furthermore, it will also produce other plots such as the dynamics of the cells in the vasculature, histograms of the cell number distribution over grid points, radius and diameter of the tumor over time, and total size of the tumor in each grid. When running from the commandline, the user can use ``python -m metaspread postprocess graphics simulation-folder-name amount-of-figures``.
 
-- **Video generation:** The user can choose the Videos option to generate animations from the figures generated in the *graphical analysis* step. When selected, the user will be prompted to introduce the framerate at which the videos should be saved. When running from the commandline, the user can use `python -m metaspread postprocess videos simulation-folder-name frame-rate`.
+- **Video generation:** The user can choose the Videos option to generate animations from the figures generated in the *graphical analysis* step. When selected, the user will be prompted to introduce the framerate at which the videos should be saved. When running from the commandline, the user can use ``python -m metaspread postprocess videos simulation-folder-name frame-rate``.
 
-- **Run all:** The user can run all the aforementioned steps in order with this option. When running from the commandline, the user can use ```python -m metaspread postprocess all simulation-folder-name amount-of-figures frame-rate``.
+- **Run all:** The user can run all the aforementioned steps in order with this option. When running from the commandline, the user can use ``python -m metaspread postprocess all simulation-folder-name amount-of-figures frame-rate``.
 
 Cancer growth and spread model
 ==============================

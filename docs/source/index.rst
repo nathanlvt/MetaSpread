@@ -8,7 +8,6 @@ Welcome to MetaSpread's documentation!
 
 .. contents::
    :depth: 2
-   :caption: Contents:
 
 Summary
 =======

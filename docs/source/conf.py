@@ -23,8 +23,10 @@ extensions = [
     'sphinx.ext.doctest',
     'sphinx.ext.autodoc', 
     'sphinx.ext.autosummary',
+    'sphinxcontrib.bibtex'
    ]
 
+bibtex_bibfiles = ['docs/source/refs.bib']
 autosummary_generate = True  # Turn on sphinx.ext.autosummary
 # autodoc_mock_imports = ["matplotlib","Mesa","numpy","pandas","pynput","opencv_python"]
 

@@ -6,7 +6,7 @@
 Welcome to MetaSpread's documentation!
 ======================================
 
-You can open the search user interface at any time by pressing :guilabel:`/`, or by using the search box on the left.
+You search through the documentation using the user interface at any time by pressing :guilabel:`/`, or by using the search box on the left.
 
 .. contents::
    :depth: 2
@@ -32,7 +32,7 @@ Usage
 The program can be run both interactively through the command line, or with explicit user command line arguments.
 
 
-.. image:: postprocessing_menu.png
+.. image:: main_menu.png
 When run interactively, starting from the main menu, the following possibilities are offered: 
 
 - **Run a new simulation:** the user can choose the *New Simulation* option to run a new simulation, with the arguments to be specified by the user being the maximal time for the dynamics, and the frequency of saving data (temporal resolution). Any other simulation parameter (see  Table \ref{table} ) will be taken from the *simulation\_configs.csv* file in the main folder. At the end of the simulation the dynamics of the grids, including agents (cells and vasculature points), the vasculature dynamics and the MMP2 and ECM are saved in a properly identified directory, including a *configs.csv* recording the used parameters for this particular simulation. The file *CellsData.csv* in this directory will include all the information of all cells and vasculature points in the simulation, for every time step.

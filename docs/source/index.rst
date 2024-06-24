@@ -34,6 +34,7 @@ The dimensionless model, as described by [@franssen2019] in Appendix A of their 
   \end{equation}
 
 .. math::
+   :label: eqn1
 
   \begin{equation}
   \begin{aligned}
@@ -43,7 +44,6 @@ The dimensionless model, as described by [@franssen2019] in Appendix A of their 
   \frac{\partial w}{\partial t} & =-( \Gamma _{1} c_{\mathrm{M}} +\Gamma _{2} m) w
   \end{aligned}
   \end{equation}
-   :label: eqn1
 
 Test: :eq:`eqn1`
 For the simulation of the spatio-temporal growth dynamics, and metastatic spread, the system of PDE's is discretized, and several 2-dimensional grids are established, representing the primary site and the metastatic sites. Discretizing equations for :math:`c_E` and :math:`c_M` in space and time, we obtain:

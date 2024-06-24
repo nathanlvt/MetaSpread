@@ -19,12 +19,28 @@ We develop and provide MetaSpread, an open source simulation package and interac
 Installation
 ============
 
-MetaSpread is available as an official PyPi package. To install, simply run:
+MetaSpread is available as a official PyPI package. To install, you will need to have PIP installed. Afterwards, run:
+
+.. code-block:: console
+   
+   pip install metaspread
+
+or:
 
 .. code-block:: console
 
-   pip install metaspread
+   python -m pip install metaspread
 
+Manual installation can be done by downloading the repo.
+
+Finally, the program can be run interactiively with:
+
+
+.. code-block:: console
+
+   python -m metaspread
+
+Or it can be run purely through command line arguments, as detailed in the following section.
 
 Usage
 =====

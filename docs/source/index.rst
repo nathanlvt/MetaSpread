@@ -24,25 +24,17 @@ The dimensionless model, as described by [@franssen2019] in Appendix A of their 
 
 .. math::
 
-  \begin{equation}
-  \begin{aligned}
   \frac{\partial c_{E}}{\partial t} & =D_{\mathrm{E}} \nabla ^{2} c_{\mathrm{E}} -\Phi _{\mathrm{E}} \nabla \cdot ( c_{\mathrm{E}} \nabla w)\\
   \frac{\partial c_{\mathrm{M}}}{\partial t} & =D_{\mathrm{M}} \nabla ^{2} c_{\mathrm{M}} -\Phi _{\mathrm{M}} \nabla \cdot ( c_{\mathrm{M}} \nabla w)\\
   \frac{\partial m}{\partial t} & =D_{m} \nabla ^{2} m+\Theta c_{\mathrm{M}} -\Lambda m\\
   \frac{\partial w}{\partial t} & =-( \Gamma _{1} c_{\mathrm{M}} +\Gamma _{2} m) w
-  \end{aligned}
-  \end{equation}
 
 For the simulation of the spatio-temporal growth dynamics, and metastatic spread, the system of PDE's is discretized, and several 2-dimensional grids are established, representing the primary site and the metastatic sites. Discretizing equations for :math:`c_E` and :math:`c_M` in space and time, we obtain:
 
 .. math::
 
-   \begin{equation}
-   \begin{aligned}
    c_{Ei,j}^{n+1} = & \mathcal{P}_{0} c^{n}_{Ei-1,j} +\mathcal{P}_{1} c^{n}_{Ei+1,j} +\mathcal{P}_{2} c^{n}_{Ei,j+1} +\mathcal{P}_{3} c^{n}_{Ei,j-1} +\mathcal{P}_{4} c^{n}_{Ei,j}\\
    c_{Mi,j}^{n+1} = & \mathcal{P}_{0} c^{n}_{Mi-1,j} +\mathcal{P}_{1} c^{n}_{Mi+1,j} +\mathcal{P}_{2} c^{n}_{Mi,j+1} +\mathcal{P}_{3} c^{n}_{Mi,j-1} +\mathcal{P}_{4} c^{n}_{Mi,j}\\
-   \end{aligned}
-   \end{equation}
 
 Where :math:`n` refers to time point, :math:`(i,j)` refers to the spatial grid point :math:`(i,j)`, and  :math:`\mathcal{P}_0` to :math:`\mathcal{P}_4`:
 
@@ -53,9 +45,6 @@ Where :math:`n` refers to time point, :math:`(i,j)` refers to the spatial grid p
    \mathcal{P}_{2} : & \mathcal{P}_{i,j+1}^{n} :=\frac{\Delta t}{(\Delta x)^{2}}\left[ D_{k} +\frac{\Phi _{k}}{4}\left( w_{i,j+1}^{n} -w_{i,j-1}^{n}\right)\right]\\
    \mathcal{P}_{3} : & \mathcal{P}_{i,j-1}^{n} :=\frac{\Delta t}{(\Delta x)^{2}}\left[ D_{k} -\frac{\Phi _{k}}{4}\left( w_{i,j+1}^{n} -w_{i,j-1}^{n}\right)\right]\\
    \mathcal{P}_{4} : & \mathcal{P}_{i,j}^{n} :=1-(\mathcal{P}_{0} +\mathcal{P}_{1} +\mathcal{P}_{2} +\mathcal{P}_{3})
-   \end{aligned}
-   \label{probs}
-   \end{equation}
 
 represent the probabilities for a cell to move up, down, left, right, or stay in place, and where :math:`k=E,M` can refer to an epithelial-like or mesenchymal-like cell. Each cell on every grid point at location :math:`(x_i,y_j)` is modeled as an individual agent, which obeys probability rules for growth and movement. There is a maximal carrying capacity for each grid point given by :math:`Q,` (assumed equal to 4 in [@franssen2019]), to represent competition for space. There exist a doubling time :math:`T_E` and :math:`T_M` for epithelial and mesenchymal cells at which all the cells present in all grids will reproduce, duplicating in place, but never exceeding :math:`Q`.
 

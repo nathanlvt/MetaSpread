@@ -6,14 +6,9 @@
 Welcome to MetaSpread's documentation!
 ======================================
 
-.. toctree::
-   :maxdepth: 2
+.. contents::
+   :depth: 2
    :caption: Contents:
-
-   api
-   usage
-
-
 
 Indices and tables
 ==================

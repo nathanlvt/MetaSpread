@@ -164,6 +164,8 @@ The vasculature is the structure connecting the primary and secondary sites, and
 
 Extravasation rules follow the setup in the original paper [@franssen2019], ensuring arriving cells do not violate the carrying capacity. Metastatic growth after extravasation follows the same rules as in the original grid. 
 
+How to contribute
+=======
 
 Indices
 =======

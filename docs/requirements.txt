@@ -7,3 +7,4 @@ numpy==1.26.0
 pandas==2.1.1
 pynput==1.7.6
 opencv_python==4.8.1.78
+readthedocs-sphinx-search==0.3.2

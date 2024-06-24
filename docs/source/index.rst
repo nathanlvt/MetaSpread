@@ -6,6 +6,8 @@
 Welcome to MetaSpread's documentation!
 ======================================
 
+You can open the search user interface at any time by pressing :guilabel:`/`, or by using the search box on the left.
+
 .. contents::
    :depth: 2
 

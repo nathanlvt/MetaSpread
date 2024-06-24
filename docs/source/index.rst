@@ -137,7 +137,7 @@ Simulation parameters
 
 
 +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-|                               | Variable name                 | ** Description **                                                             | **Value**                 |
+|                               | Variable name                 | ** Description **                                                                 | **Value**                 |
 +===============================+===================================+===============================================================================+===========================+
 | :math:`\Delta t`              | `th`                              | Time step                                                                     | :math:`1\times 10^{-3}`   |
 | :math:`\Delta x`              | `xh`                              | Space step                                                                    | :math:`5\times 10^{-3}`   |
@@ -181,6 +181,13 @@ The vasculature is the structure connecting the primary and secondary sites, and
 Extravasation rules follow the setup in the original paper [@franssen2019], ensuring arriving cells do not violate the carrying capacity. Metastatic growth after extravasation follows the same rules as in the original grid. 
 
 The defaulta parameters are:
++--------------+----------+-----------+-----------+
+| row 1, col 1 | column 2 | column 3  | column 4  |
++--------------+----------+-----------+-----------+
+| row 2        |                                  |
++--------------+----------+-----------+-----------+
+| row 3        |          |           |           |
++--------------+----------+-----------+-----------+
 
 +--------------------------+---------------------------------------------------------------------|
 |        Variable          |     Dimensional Value                                               |

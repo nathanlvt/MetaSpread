@@ -180,6 +180,27 @@ The vasculature is the structure connecting the primary and secondary sites, and
 
 Extravasation rules follow the setup in the original paper [@franssen2019], ensuring arriving cells do not violate the carrying capacity. Metastatic growth after extravasation follows the same rules as in the original grid. 
 
+The defaulta parameters are:
++----------------------+-----------------------------------------------|
+|        Variable      |     Dimensional Value                         |
++======================+===============================================|
+| $$ \Delta t  $$      | $$ 40$$ s                                     |
+| $$ \Delta x  $$      | $$  1\times 10^{-3} $$ cm                     |
+| $$ \Delta t_a  $$    | $$ 40$$ s                                     |
+| $$ \Delta x_a  $$    | $$  1\times 10^{-3} $$ cm                     |
+| $$ D_{M}  $$         | $$1\times 10^{-10}$$ cm$^{2}$s$^{-1}$         |
+| $$ D_{E} $$          | $$5\times 10^{-11}$$ cm$^{2}$s$^{-}$$^{1}$    |
+| $$ \Phi _{M}  $$     | $$2.6\times 10^{3}$$ cm$^{2}$M$^{-1}$s$^{-1}$ |
+| $$ \Phi _{E}  $$     | $$2.6\times 10^{3}$$ cm$^{2}$M$^{-1}$s$^{-1}$ |
+| $$ D_{m}  $$         | $$1\times 10^{-9}$$ cm$^{2}$s$^{-1}$          |
+| $$ \Theta  $$        | $$4.875\times 10^{-6}$$ M$^{-1}$s$^{-1}$      |
+| $$ \Lambda  $$       | $$2.5\times 10^{-6}$$ s$^{-1}$                |
+| $$ \Gamma _{1}  $$   | $$1\times 10^{-4}$$ s$^{-1}$                  |
+| $$ \Gamma _{2} $$    | $$1\times 10^{-4}$$ M$^{-1}$s$^{-1}$          |
+| $$ T_{V}  $$         | $$7.2\times 10^{3}$$ s                        |
+| $$ T_{M}  $$         | $$1.2\times 10^{5}$$ s                        |
+| $$ T_{E}  $$         | $$8\times 10^{4}$$ s                          |
++----------------------+-----------------------------------------------|
 Examples
 ========
 

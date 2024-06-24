@@ -24,7 +24,8 @@ extensions = [
     'sphinx.ext.autodoc', 
     'sphinx.ext.autosummary',
     'sphinxcontrib.bibtex',
-    'sphinx.ext.mathjax'
+    'sphinx.ext.mathjax',
+    'sphinx_search.extension',
    ]
 
 bibtex_bibfiles = ['refs.bib']

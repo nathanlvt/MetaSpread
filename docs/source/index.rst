@@ -189,26 +189,26 @@ The defaulta parameters are:
 | row 3        |          |           |           |
 +--------------+----------+-----------+-----------+
 
-+--------------------------+---------------------------------------------------------------------|
-|        Variable          |     Dimensional Value                                               |
-+==========================+=====================================================================|
-| :math:` \Delta t  `      | :math:` 40` s                                                       |
-| :math:` \Delta x  `      | :math:`  1\times 10^{-3} ` cm                                       |
-| :math:` \Delta t_a  `    | :math:` 40` s                                                       |
-| :math:` \Delta x_a  `    | :math:`  1\times 10^{-3} ` cm                                       |
-| :math:` D_{M}  `         | :math:`1\times 10^{-10}` cm:math:`^{2}`s:math:`^{-1}`               |
-| :math:` D_{E} `          | :math:`5\times 10^{-11}` cm:math:`^{2}`s:math:`^{-}`:math:`^{1}`    |
-| :math:` \Phi _{M}  `     | :math:`2.6\times 10^{3}` cm:math:`^{2}`M:math:`^{-1}`s:math:`^{-1}` |
-| :math:` \Phi _{E}  `     | :math:`2.6\times 10^{3}` cm:math:`^{2}`M:math:`^{-1}`s:math:`^{-1}` |
-| :math:` D_{m}  `         | :math:`1\times 10^{-9}` cm:math:`^{2}`s:math:`^{-1}`                |
-| :math:` \Theta  `        | :math:`4.875\times 10^{-6}` M:math:`^{-1}`s:math:`^{-1}`            |
-| :math:` \Lambda  `       | :math:`2.5\times 10^{-6}` s:math:`^{-1}`                            |
-| :math:` \Gamma _{1}  `   | :math:`1\times 10^{-4}` s:math:`^{-1}`                              |
-| :math:` \Gamma _{2} `    | :math:`1\times 10^{-4}` M:math:`^{-1}`s:math:`^{-1}`                |
-| :math:` T_{V}  `         | :math:`7.2\times 10^{3}` s                                          |
-| :math:` T_{M}  `         | :math:`1.2\times 10^{5}` s                                          |
-| :math:` T_{E}  `         | :math:`8\times 10^{4}` s                                            |
-+--------------------------+---------------------------------------------------------------------|
+   +--------------------------+---------------------------------------------------------------------|
+   |        Variable          |     Dimensional Value                                               |
+   +==========================+=====================================================================|
+   | :math:` \Delta t  `      | :math:` 40` s                                                       |
+   | :math:` \Delta x  `      | :math:`  1\times 10^{-3} ` cm                                       |
+   | :math:` \Delta t_a  `    | :math:` 40` s                                                       |
+   | :math:` \Delta x_a  `    | :math:`  1\times 10^{-3} ` cm                                       |
+   | :math:` D_{M}  `         | :math:`1\times 10^{-10}` cm:math:`^{2}`s:math:`^{-1}`               |
+   | :math:` D_{E} `          | :math:`5\times 10^{-11}` cm:math:`^{2}`s:math:`^{-}`:math:`^{1}`    |
+   | :math:` \Phi _{M}  `     | :math:`2.6\times 10^{3}` cm:math:`^{2}`M:math:`^{-1}`s:math:`^{-1}` |
+   | :math:` \Phi _{E}  `     | :math:`2.6\times 10^{3}` cm:math:`^{2}`M:math:`^{-1}`s:math:`^{-1}` |
+   | :math:` D_{m}  `         | :math:`1\times 10^{-9}` cm:math:`^{2}`s:math:`^{-1}`                |
+   | :math:` \Theta  `        | :math:`4.875\times 10^{-6}` M:math:`^{-1}`s:math:`^{-1}`            |
+   | :math:` \Lambda  `       | :math:`2.5\times 10^{-6}` s:math:`^{-1}`                            |
+   | :math:` \Gamma _{1}  `   | :math:`1\times 10^{-4}` s:math:`^{-1}`                              |
+   | :math:` \Gamma _{2} `    | :math:`1\times 10^{-4}` M:math:`^{-1}`s:math:`^{-1}`                |
+   | :math:` T_{V}  `         | :math:`7.2\times 10^{3}` s                                          |
+   | :math:` T_{M}  `         | :math:`1.2\times 10^{5}` s                                          |
+   | :math:` T_{E}  `         | :math:`8\times 10^{4}` s                                            |
+   +--------------------------+---------------------------------------------------------------------|
 
 Examples
 ========

@@ -23,7 +23,8 @@ extensions = [
     'sphinx.ext.doctest',
     'sphinx.ext.autodoc', 
     'sphinx.ext.autosummary',
-    'sphinxcontrib.bibtex'
+    'sphinxcontrib.bibtex',
+    'sphinx.ext.mathjax'
    ]
 
 bibtex_bibfiles = ['refs.bib']
@@ -42,3 +43,7 @@ exclude_patterns = []
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 
+
+#math
+
+mathjax_path = 'https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML'

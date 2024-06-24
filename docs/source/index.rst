@@ -181,6 +181,7 @@ The vasculature is the structure connecting the primary and secondary sites, and
 Extravasation rules follow the setup in the original paper [@franssen2019], ensuring arriving cells do not violate the carrying capacity. Metastatic growth after extravasation follows the same rules as in the original grid. 
 
 The defaulta parameters are:
+
 +----------------------+-----------------------------------------------|
 |        Variable      |     Dimensional Value                         |
 +======================+===============================================|
@@ -201,6 +202,7 @@ The defaulta parameters are:
 | $$ T_{M}  $$         | $$1.2\times 10^{5}$$ s                        |
 | $$ T_{E}  $$         | $$8\times 10^{4}$$ s                          |
 +----------------------+-----------------------------------------------|
+
 Examples
 ========
 

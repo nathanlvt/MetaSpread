@@ -234,7 +234,7 @@ With the default values, the following output was obtained:
 .. raw:: html
 
     <div style="margin-bottom: 2em; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://youtube.com/shorts/Tc81GKmZDCs" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+        <iframe src="https://youtube.com/embed/Tc81GKmZDCs" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
 
 **Dynamics of haptotactic tumor**
@@ -242,7 +242,7 @@ With the default values, the following output was obtained:
 .. raw:: html
 
     <div style="margin-bottom: 2em; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://youtube.com/shorts/UIGS2FAuN9A?feature=share" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+        <iframe src="https://youtube.com/embed/UIGS2FAuN9A" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
 
 How to contribute

@@ -238,6 +238,8 @@ With the default values, the following output was obtained:
 ..     </div>
 
 `Video of the tumor dynamics of the haptotactic tumor <https://www.youtube.com/watch?v=Tc81GKmZDCs>`_
+
+
 `Video of the tumor dynamics of the haptotactic tumor <https://www.youtube.com/watch?v=UIGS2FAuN9A>`_
 
 .. .. raw:: html

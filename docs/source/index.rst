@@ -248,6 +248,15 @@ With the default values, the following output was obtained:
 How to contribute
 =======
 
+How to cite
+=======
+
+**Cite MetaSpread:**
+
+
+**The original mathematical model:**
+Franssen, L.C., Lorenzi, T., Burgess, A.E.F. *et al*. A Mathematical Framework for Modelling the Metastatic Spread of Cancer. *Bull Math Biol* **81**, 1965–2010 (2019). https://doi.org/10.1007/s11538-019-00597-x
+
 Indices
 =======
 

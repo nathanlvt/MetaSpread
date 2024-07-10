@@ -229,6 +229,22 @@ With the default values, the following output was obtained:
 .. figure:: dynamics.png
 **Dynamics of total cell counts over time up to 12.78 days.** Top panels: In the primary (left) and secondary (right) tumor grid. Here we illustrate the functionality of the package to yield summaries of the spatiotemporal evolution of the cancer dynamics in the primary and in the metastatic site(s), namely total count of epithelial (E) and mesenchymal (M) cells. Middle panels: Dynamics in the vasculature, showing the amount of E and M cells (left), and the amount clusters (right). Cells can persist as single cells (CTC) or as multicellular clusters. As it can be seen, the majority of cells in the vasculature circulate in the form of clusters (green line) with only a minority being single CTCs (the difference between the red and the green line). Bottom panels: (left) radius and diameter of the spatio-temporal spread Radius is defined as the maximum of all cell distances from the centroid of mass, and diameter as the maximum of all cell-to-cell distances. (Right) distribution histogram of the cells over spatial grid points in the primary grid. The figure is obtained from the simulations corresponding to Figure 3:
 
+**Dynamics of tumor with default parameters**
+
+.. raw:: html
+
+    <div style="margin-bottom: 2em; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="https://youtube.com/shorts/Tc81GKmZDCs" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
+
+**Dynamics of haptotactic tumor**
+
+.. raw:: html
+
+    <div style="margin-bottom: 2em; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="https://youtube.com/shorts/UIGS2FAuN9A?feature=share" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
+
 How to contribute
 =======
 

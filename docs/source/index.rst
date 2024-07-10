@@ -55,11 +55,12 @@ When run interactively, starting from the main menu, the following possibilities
 
   - The *simulation_configs.csv* file can be modified both in a code editor, or in a spreadsheet processing software, such as Microsoft Excel:
 
-  .. figure:: csv_code.png
-  The *simulation_configs.csv* file in Visual Studio Code.
-
+  .. figure:: csv_both.png
+  The *simulation_configs.csv* file in Visual Studio Code (left) and in Microsoft Excel (right).
+..   .. figure:: csv_code.png
+..   The *simulation_configs.csv* file in Visual Studio Code.
   .. figure:: csv_excel.png
-  The *simulation_configs.csv* file in Microsoft Excel.
+..   The *simulation_configs.csv* file in Microsoft Excel.
   
   - In addition, in the ECM and MMP2 folders there will be files containing the values of these factors for each time step, not requiring any postprocessing.
   

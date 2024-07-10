@@ -237,7 +237,7 @@ With the default values, the following output was obtained:
 ..         <iframe src="https://youtube.com/embed/Tc81GKmZDCs" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 ..     </div>
 
-`Video of the tumor dynamics of the haptotactic tumor <https://www.youtube.com/watch?v=Tc81GKmZDCs>`_
+`Video of the default tumor dynamics <https://www.youtube.com/watch?v=Tc81GKmZDCs>`_
 
 
 | `Video of the tumor dynamics of the haptotactic tumor <https://www.youtube.com/watch?v=UIGS2FAuN9A>`_

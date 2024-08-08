@@ -42,7 +42,7 @@ def run_simulation(max_steps, data_collection_period, loaded_simulation_path="")
     height       = gridsize
 
     # Name of the directories
-    simulations_dir = "Simulations"
+    simulations_dir = "Simulations/5-6/run1"
     os.makedirs(simulations_dir, exist_ok=True)
     if loaded_simulation_path != "":
         cells_path = os.path.join(loaded_simulation_path, "CellsData.csv")
@@ -62,7 +62,7 @@ def run_simulation(max_steps, data_collection_period, loaded_simulation_path="")
     else:
         df = pd.DataFrame()
         loaded_max_step = 0
-        new_simulation_folder = f"Sim-max_steps-{max_steps}-collection_period-{data_collection_period}-cells-{number_of_initial_cells}-grids_number-{grids_number}"
+        new_simulation_folder = "5-6_vessels-0_gamma1-0_theta-0.0"
 
         # Creates the path for the new simulation
         path = os.path.join(simulations_dir, new_simulation_folder)

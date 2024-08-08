@@ -8,7 +8,7 @@ dE,5e-05
 phiM,0.0005
 phiE,0.0005
 dmmp,0.001
-theta,0.195
+theta,0.3
 Lambda,0.1
 gamma1,1
 gamma2,1  
@@ -16,7 +16,7 @@ vasculature_time,180
 doubling_time_M,2000 
 doubling_time_E,3000
 single_cell_survival,0.0005
-cluster_survival,0.0115
+cluster_survival,0.025
 extravasation_probs,"[0.75, 0.25]"
 dissagreggation_prob,0.5
 carrying_capacity,4

@@ -8,7 +8,8 @@ dE,5e-11
 phiM,0.0005
 phiE,0.0005
 dmmp,0.001
-theta,0.0
+theta,0.1
+
 Lambda,0.1
 gamma1,0
 gamma2,1  

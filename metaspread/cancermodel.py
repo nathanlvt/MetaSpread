@@ -98,7 +98,7 @@ class CancerModel(mesa.Model):
 
     def __init__(self, number_of_initial_cells, width, height, grids_number, max_steps, data_collection_period, new_simulation_folder, loaded_simulation_path="", seed=None):
         super().__init__()  
-        self.simulations_dir = "Simulations"
+        self.simulations_dir = "Simulations/5-4_dmmp/run2"
         self.vasculature = {}
         self.number_of_initial_cells = number_of_initial_cells
         self.width = width

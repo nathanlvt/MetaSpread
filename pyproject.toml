@@ -41,3 +41,8 @@ include = [
   "README.md",
   "requirements.txt",
 ]
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "."
+]

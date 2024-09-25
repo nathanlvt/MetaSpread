@@ -221,7 +221,7 @@ The vasculature is the structure connecting the primary and secondary sites, and
 
 Extravasation rules follow the setup in the original paper :cite:p:`franssen2019`, ensuring arriving cells do not violate the carrying capacity. Metastatic growth after extravasation follows the same rules as in the original grid. 
 
-The defaulta parameters are:
+The default parameters are:
 
 +--------------------------+--------------------------------------------------------------------------+
 |        Variable          |     Dimensional Value                                                    |
@@ -244,13 +244,13 @@ The defaulta parameters are:
 +--------------------------+--------------------------------------------------------------------------+
 | :math:`D_{m}`            | :math:`1\times 10^{-9}` cm :math:`^{2}` s :math:`^{-1}`                  |
 +--------------------------+--------------------------------------------------------------------------+
-| :math:`\Theta`           | :math:`4.875\times 10^{-6}` M :math:`^{-1}`s :math:`^{-1}`               |
+| :math:`\Theta`           | :math:`4.875\times 10^{-6}` M :math:`^{-1}` s :math:`^{-1}`               |
 +--------------------------+--------------------------------------------------------------------------+
 | :math:`\Lambda`          | :math:`2.5\times 10^{-6}` s :math:`^{-1}`                                |
 +--------------------------+--------------------------------------------------------------------------+
 | :math:`\Gamma _{1}`      | :math:`1\times 10^{-4}` s :math:`^{-1}`                                  |
 +--------------------------+--------------------------------------------------------------------------+
-| :math:`\Gamma _{2}`      | :math:`1\times 10^{-4}` M :math:`^{-1}`s :math:`^{-1}`                   |
+| :math:`\Gamma _{2}`      | :math:`1\times 10^{-4}` M :math:`^{-1}` s :math:`^{-1}`                   |
 +--------------------------+--------------------------------------------------------------------------+
 | :math:`T_{V}`            | :math:`7.2\times 10^{3}` s                                               |
 +--------------------------+--------------------------------------------------------------------------+

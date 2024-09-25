@@ -199,7 +199,8 @@ Simulation parameters
 | :math:`-`                     | `n\_center\_points\_for\_tumor`   | | Nr. of center-most grid points where the                                    | :math:`97`                |
 |                               |                                   | | primary cells are going to be seeded                                        |                           |
 +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-| :math:`-`                     | `n\_center\_points\_for\_vessels` | Nr. of center-most grid points where the vessels will not be able to spawn    | :math:`200`               |
+| :math:`-`                     | `n\_center\_points\_for\_vessels` | | Nr. of center-most grid points where the                                    | :math:`200`               |
+|                               |                                   | | vessels will not be able to spawn                                           | :math:`200`               |
 +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
 | :math:`-`                     | `gridsize`                        | Length in gridpoints of the grid's side                                       | :math:`201`               |
 +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+

@@ -101,6 +101,7 @@ Cancer growth and spread model
 .. _figure-example-sim:
 
 .. figure:: Figure_1.png
+   :align: center
 
    **Early snapshot of our simulations for cancer cell spread in the primary tumour (grid 1) after approximately 5 days.** Parameters as in Table \ref{table} with initial distribution centered around (1 mm, 1 mm) with radius of about ~0.1 mm, and total initial size = 388 cells. The blue color denotes mesenchymal cells, the orange color denotes epithelial cells. The intensity of the color represents the number of cells (from 0 to Q = 4) in that particular grid point. The red grid points represent entry-points to the vasculature, with circles intact vessels and crosses representing ruptured vessels.
 
@@ -147,7 +148,10 @@ For the abiotic factors :math:`m` and :math:`w`, the discretization takes the fo
 where :math:`i,j` reflect the grid point (:math:`i,j`) and :math:`n` the time-point. In this discretization two different time and spatial steps are used for the cell population (E and M cells) and the abiotic factors (ECM and MMP-2), namely :math:`\Delta t` and :math:`\Delta x = \Delta y`, :math:`\Delta t_a` and :math:`\Delta x_a = \Delta y_a` respectively.
 
 .. _figure-flowchart:
+
 .. figure::flowchart.png
+   :align: center
+
    **Diagram summarizing the key algorithmic steps**
 
 

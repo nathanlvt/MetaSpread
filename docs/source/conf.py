@@ -48,3 +48,6 @@ html_static_path = ['_static']
 #math
 
 mathjax_path = 'https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+
+#figure numbers
+numfig = True

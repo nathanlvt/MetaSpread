@@ -51,7 +51,7 @@ The program can be run both interactively through the command line, or with expl
 .. image:: main_menu.png
 When run interactively, starting from the main menu, the following possibilities are offered: 
 
-- **Run a new simulation:** the user can choose the *New Simulation* option to run a new simulation, with the arguments to be specified by the user being the maximal time for the dynamics, and the frequency of saving data (temporal resolution). Any other simulation parameter (see  Table :numref:`table-sim_parameters` ) will be taken from the *simulation\_configs.csv* file in the main folder. At the end of the simulation the dynamics of the grids, including agents (cells and vasculature points), the vasculature dynamics and the MMP2 and ECM are saved in a properly identified directory, including a *configs.csv* recording the used parameters for this particular simulation. The file *CellsData.csv* in this directory will include all the information of all cells and vasculature points in the simulation, for every time step.
+- **Run a new simulation:** the user can choose the *New Simulation* option to run a new simulation, with the arguments to be specified by the user being the maximal time for the dynamics, and the frequency of saving data (temporal resolution). Any other simulation parameter (see  Table :numref:`table-sim-parameters` ) will be taken from the *simulation\_configs.csv* file in the main folder. At the end of the simulation the dynamics of the grids, including agents (cells and vasculature points), the vasculature dynamics and the MMP2 and ECM are saved in a properly identified directory, including a *configs.csv* recording the used parameters for this particular simulation. The file *CellsData.csv* in this directory will include all the information of all cells and vasculature points in the simulation, for every time step.
 
   - The *simulation_configs.csv* file can be modified both in a code editor, or in a spreadsheet processing software, such as Microsoft Excel:
 
@@ -103,7 +103,7 @@ Cancer growth and spread model
 .. figure:: Figure_1.png
    :align: center
 
-   **Early snapshot of our simulations for cancer cell spread in the primary tumour (grid 1) after approximately 5 days.** Parameters as in Table :numref:`table-sim_parameters` with initial distribution centered around (1 mm, 1 mm) with radius of about ~0.1 mm, and total initial size = 388 cells. The blue color denotes mesenchymal cells, the orange color denotes epithelial cells. The intensity of the color represents the number of cells (from 0 to Q = 4) in that particular grid point. The red grid points represent entry-points to the vasculature, with circles intact vessels and crosses representing ruptured vessels.
+   **Early snapshot of our simulations for cancer cell spread in the primary tumour (grid 1) after approximately 5 days.** Parameters as in Table :numref:`table-sim-parameters` with initial distribution centered around (1 mm, 1 mm) with radius of about ~0.1 mm, and total initial size = 388 cells. The blue color denotes mesenchymal cells, the orange color denotes epithelial cells. The intensity of the color represents the number of cells (from 0 to Q = 4) in that particular grid point. The red grid points represent entry-points to the vasculature, with circles intact vessels and crosses representing ruptured vessels.
 
 A 2-dimensional multigrid hybrid spatial model of cancer dynamics is developed in Python (see :numref:`figure-example-sim` for a snapshot illustration). Here we combine the stochastic individual based dynamics of single cells with deterministic dynamics of the abiotic factors. The algorithm for dynamic progression at each time step is depicted in :numref:`figure-flowchart`. In the tumor site we consider two different cancer cell phenotypes: epithelial (epithelial-like) and mesenchymal (mesenchymal-like) cells. The epithelial-like (E) cancer cells reproduce at a higher rate, but diffuse more slowly than mesenchymal (M) cells, which reproduce at a lower rate but diffuse more rapidly. Furthermore, epithelial cells cannot break through the vasculature wall alone, as they require the presence of mesenchymal cells to be able to intravasate into normal vessel entry-points. The exception to this are ruptured vessels, that allow for the intravasation of any type of cancer cell. The cellular growth and movement in space is modeled considering 2 partial differential equations, where random (diffusion) and non-random (haptotaxis) movement are implemented. The model includes two additional equations: one for the spatio-temporal dynamics of matrix metalloproteinase 2 (MMP-2), a chemical that favors the spread of cancer cells, and another for the degradation of the extracellular matrix (ECM), which also favors the haptotactic movement of the cancer cells. 
 The dimensionless model, as described by :cite:p:`franssen2019` in Appendix A of their paper, corresponds to 4 PDEs, where the key variables reflect local densities of epithelial cells (:math:`c_E`) and mesenchymal cells (:math:`c_M`), and concentrations of MMP2 (:math:`m`) and extracellular matrix (:math:`w`):
@@ -160,77 +160,80 @@ where :math:`i,j` reflect the grid point (:math:`i,j`) and :math:`n` the time-po
 Simulation parameters
 =====================
 
-.. _table-sim_parameters:
+.. _table-sim-parameters:
 
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-|                               | Variable name                     | Description                                                                   | Value                     |
-+===============================+===================================+===============================================================================+===========================+
-| :math:`\Delta t`              | ``th``                            | Time step                                                                     | :math:`1\times 10^{-3}`   |
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-| :math:`\Delta x`              | ``xh``                            | Space step                                                                    | :math:`5\times 10^{-3}`   |
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-| :math:`\Delta t_a`            | ``tha``                           | Abiotic time step                                                             | :math:`1\times 10^{-3}`   |
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-| :math:`\Delta x_a`            | ``xha``                           | Abiotic space step                                                            | :math:`5\times 10^{-3}`   |
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-| :math:`D_{M}`                 | ``dM``                            | Mesenchymal-like cancercell diffusion coefficient                             | :math:`1\times 10^{-4}`   |
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-| :math:`D_{E}`                 | ``dE``                            | Epithelial-like cancer cell diffusion coefficient                             | :math:`5\times 10^{-5}`   |
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-| :math:`\Phi _{M}`             | ``phiM``                          | Mesenchymal haptotactic sensitivity coefficient                               | :math:`5\times 10^{-4}`   |
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-| :math:`\Phi _{E}`             | ``phiE``                          | Epithelial haptotactic sensitivity coefficient                                | :math:`5\times 10^{-4}`   |
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-| :math:`D_{m}`                 | ``dmmp``                          | MMP-2 diffusion coefficient                                                   | :math:`1\times 10^{-3}`   |
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-| :math:`\Theta`                | ``theta``                         | MMP-2 production rate                                                         | :math:`0.195`             |
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-| :math:`\Lambda`               | ``Lambda``                        | MMP-2 decay rate                                                              | :math:`0.1`               |
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-| :math:`\Gamma _{1}`           | ``gamma1``                        | ECM degradation rate by MT1-MMP                                               | :math:`1`                 |
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-| :math:`\Gamma _{2}`           | ``gamma2``                        | ECM degradation rate by MMP-2                                                 | :math:`1`                 |
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-| :math:`T_{V}`                 | ``vasculature_time``              | Steps CTCs spend in the vasculature                                           | :math:`180`               |
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-| :math:`T_{E}`                 | ``doublingTimeE``                 | Epithelial doubling time                                                      | :math:`3000`              |
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-| :math:`T_{M}`                 | ``doublingTimeM``                 | Mesenchymal doubling time                                                     | :math:`2000`              |
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-| :math:`\mathcal{P}_{s}`       | ``single_cell_survival``          | Single CTC survival probability                                               | :math:`5\times 10^{-4}`   |
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-| :math:`\mathcal{P}_{C}`       | ``cluster_survival``              | CTC cluster survival probability                                              | :math:`2.5\times 10^{-2}` |
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-| :math:`\mathcal{E}_{1,...,n}` | ``extravasation_probs``           | Extravasation probabilities                                                   | :math:`[0.75, 0.25]`      |
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-| :math:`\mathcal{P}_{d}`       | ``disaggregation_prob``           | Individual cancer cell dissagregation probability                             | :math:`0.5`               |
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-| :math:`Q`                     | ``carrying_capacity``             | Maximum amount of cells per grid point                                        | :math:`4`                 |
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-| :math:`U_P`                   | ``normal_vessels_primary``        | Nr. of normal vessels present on the primary grid                             | :math:`2`                 |
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-| :math:`V_P`                   | ``ruptured_vessels_primary``      | Nr. of ruptured vessels present on the primary grid                           | :math:`8`                 |
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-| :math:`U_{2,...,n}`           | ``secondary_sites_vessels``       | Nr. of vessels present on the secondary sites                                 | :math:`[10, 10]`          |
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-| :math:`-`                     | ``n_center_points_for_tumor``     | | Nr. of center-most grid points where the                                    | :math:`97`                |
-|                               |                                   | | primary cells are going to be seeded                                        |                           |
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-| :math:`-`                     |``n_center_points_for_vessels``    | | Nr. of center-most grid points where the                                    | :math:`200`               |
-|                               |                                   | | vessels will not be able to spawn                                           |                           |
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-| :math:`-`                     | ``gridsize``                      | Length in gridpoints of the grid's side                                       | :math:`201`               |
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-| :math:`-`                     | ``grids_number``                  | Nr. of grids, including the primary site                                      | :math:`3`                 |
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-| :math:`-`                     | ``mesenchymal_proportion``        | Initial proportion of M cells in grid 1                                       | :math:`0.6`               |
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-| :math:`-`                     | ``epithelial_proportion``         | Initial proportion of E cells in grid 1                                       | :math:`0.4`               |
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
-| :math:`-`                     | ``number_of_initial_cells``       | Initial nr. of total cells                                                    | :math:`388`               |
-+-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+.. table::
+   :align: center
 
-The biological parameters of the model and the simulation values are summarized in Table :numref:`table-sim_parameters`, tailored to breast cancer progression and early-stage dynamics prior to any treatment and in a pre-angiogenic phase (less than 0.2 cm in diameter). We provide the default values used by :cite:p:`franssen2019`, as informed by biological and empirical considerations (see also Table :numref:`table-sim_parameters` and references therein in :cite:p:`franssen2019`). The dynamics represent a two-dimensional cross-section of a small avascular tumor and run on a 2-dimensional discrete grid (spatial domain :math:`[0,1] \times [0,1]` corresponding to physical domain of size :math:`[0,0.2]\text{ cm} \times [0,0.2]\text{ cm}`), where each grid element corresponds to a spatial unit of dimension :math:`(\Delta x,\Delta y)`, and where position :math:`x_i,y_j` corresponds to :math:`i \Delta x` and :math:`j \Delta y`. Cancer cells are modeled as discrete agents whose growth and migration dynamics follow probabilistic rules, whereas the abiotic factors MMP2 and extracellular matrix dynamics follow the deterministic PDE evolution, discretized by an explicit five-point central difference discretization scheme together with zero-flux boundary conditions. The challenge of the simulation lies in coupling deterministic and agent-based stochastic dynamics, and in formulating the interface between the primary tumor Grid 1 and the metastatic sites (Grids 2,... :math:`k`). Each grid shares the same parameters, but there can be biases in connectivity parameters between grids (:math:`\mathcal{E}_{k}` parameters).
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+   |                               | Variable name                     | Description                                                                   | Value                     |
+   +===============================+===================================+===============================================================================+===========================+
+   | :math:`\Delta t`              | ``th``                            | Time step                                                                     | :math:`1\times 10^{-3}`   |
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+   | :math:`\Delta x`              | ``xh``                            | Space step                                                                    | :math:`5\times 10^{-3}`   |
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+   | :math:`\Delta t_a`            | ``tha``                           | Abiotic time step                                                             | :math:`1\times 10^{-3}`   |
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+   | :math:`\Delta x_a`            | ``xha``                           | Abiotic space step                                                            | :math:`5\times 10^{-3}`   |
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+   | :math:`D_{M}`                 | ``dM``                            | Mesenchymal-like cancercell diffusion coefficient                             | :math:`1\times 10^{-4}`   |
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+   | :math:`D_{E}`                 | ``dE``                            | Epithelial-like cancer cell diffusion coefficient                             | :math:`5\times 10^{-5}`   |
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+   | :math:`\Phi _{M}`             | ``phiM``                          | Mesenchymal haptotactic sensitivity coefficient                               | :math:`5\times 10^{-4}`   |
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+   | :math:`\Phi _{E}`             | ``phiE``                          | Epithelial haptotactic sensitivity coefficient                                | :math:`5\times 10^{-4}`   |
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+   | :math:`D_{m}`                 | ``dmmp``                          | MMP-2 diffusion coefficient                                                   | :math:`1\times 10^{-3}`   |
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+   | :math:`\Theta`                | ``theta``                         | MMP-2 production rate                                                         | :math:`0.195`             |
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+   | :math:`\Lambda`               | ``Lambda``                        | MMP-2 decay rate                                                              | :math:`0.1`               |
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+   | :math:`\Gamma _{1}`           | ``gamma1``                        | ECM degradation rate by MT1-MMP                                               | :math:`1`                 |
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+   | :math:`\Gamma _{2}`           | ``gamma2``                        | ECM degradation rate by MMP-2                                                 | :math:`1`                 |
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+   | :math:`T_{V}`                 | ``vasculature_time``              | Steps CTCs spend in the vasculature                                           | :math:`180`               |
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+   | :math:`T_{E}`                 | ``doublingTimeE``                 | Epithelial doubling time                                                      | :math:`3000`              |
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+   | :math:`T_{M}`                 | ``doublingTimeM``                 | Mesenchymal doubling time                                                     | :math:`2000`              |
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+   | :math:`\mathcal{P}_{s}`       | ``single_cell_survival``          | Single CTC survival probability                                               | :math:`5\times 10^{-4}`   |
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+   | :math:`\mathcal{P}_{C}`       | ``cluster_survival``              | CTC cluster survival probability                                              | :math:`2.5\times 10^{-2}` |
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+   | :math:`\mathcal{E}_{1,...,n}` | ``extravasation_probs``           | Extravasation probabilities                                                   | :math:`[0.75, 0.25]`      |
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+   | :math:`\mathcal{P}_{d}`       | ``disaggregation_prob``           | Individual cancer cell dissagregation probability                             | :math:`0.5`               |
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+   | :math:`Q`                     | ``carrying_capacity``             | Maximum amount of cells per grid point                                        | :math:`4`                 |
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+   | :math:`U_P`                   | ``normal_vessels_primary``        | Nr. of normal vessels present on the primary grid                             | :math:`2`                 |
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+   | :math:`V_P`                   | ``ruptured_vessels_primary``      | Nr. of ruptured vessels present on the primary grid                           | :math:`8`                 |
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+   | :math:`U_{2,...,n}`           | ``secondary_sites_vessels``       | Nr. of vessels present on the secondary sites                                 | :math:`[10, 10]`          |
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+   | :math:`-`                     | ``n_center_points_for_tumor``     | | Nr. of center-most grid points where the                                    | :math:`97`                |
+   |                               |                                   | | primary cells are going to be seeded                                        |                           |
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+   | :math:`-`                     |``n_center_points_for_vessels``    | | Nr. of center-most grid points where the                                    | :math:`200`               |
+   |                               |                                   | | vessels will not be able to spawn                                           |                           |
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+   | :math:`-`                     | ``gridsize``                      | Length in gridpoints of the grid's side                                       | :math:`201`               |
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+   | :math:`-`                     | ``grids_number``                  | Nr. of grids, including the primary site                                      | :math:`3`                 |
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+   | :math:`-`                     | ``mesenchymal_proportion``        | Initial proportion of M cells in grid 1                                       | :math:`0.6`               |
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+   | :math:`-`                     | ``epithelial_proportion``         | Initial proportion of E cells in grid 1                                       | :math:`0.4`               |
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+   | :math:`-`                     | ``number_of_initial_cells``       | Initial nr. of total cells                                                    | :math:`388`               |
+   +-------------------------------+-----------------------------------+-------------------------------------------------------------------------------+---------------------------+
+
+The biological parameters of the model and the simulation values are summarized in Table :numref:`table-sim-parameters`, tailored to breast cancer progression and early-stage dynamics prior to any treatment and in a pre-angiogenic phase (less than 0.2 cm in diameter). We provide the default values used by :cite:p:`franssen2019`, as informed by biological and empirical considerations (see also Table :numref:`table-sim-parameters` and references therein in :cite:p:`franssen2019`). The dynamics represent a two-dimensional cross-section of a small avascular tumor and run on a 2-dimensional discrete grid (spatial domain :math:`[0,1] \times [0,1]` corresponding to physical domain of size :math:`[0,0.2]\text{ cm} \times [0,0.2]\text{ cm}`), where each grid element corresponds to a spatial unit of dimension :math:`(\Delta x,\Delta y)`, and where position :math:`x_i,y_j` corresponds to :math:`i \Delta x` and :math:`j \Delta y`. Cancer cells are modeled as discrete agents whose growth and migration dynamics follow probabilistic rules, whereas the abiotic factors MMP2 and extracellular matrix dynamics follow the deterministic PDE evolution, discretized by an explicit five-point central difference discretization scheme together with zero-flux boundary conditions. The challenge of the simulation lies in coupling deterministic and agent-based stochastic dynamics, and in formulating the interface between the primary tumor Grid 1 and the metastatic sites (Grids 2,... :math:`k`). Each grid shares the same parameters, but there can be biases in connectivity parameters between grids (:math:`\mathcal{E}_{k}` parameters).
 
 Cell proliferation is implemented in place by generating a new cell when the doubling time is completed, for each cell in each grid point. But if the carrying capacity gets surpassed, then there is no generation of a new cell. The movement of the cells is implemented through the probabilities in Equations :eq:`eq_props`, which are computed at each time point and for each cell and contain the contribution of the random diffusion process and non-random haptotactic movement. If a cell lands in a grid point that contains a vasculature entry point, it is typically removed from the main grid and added to the vasculature. But there are details regarding the type of cells (E or M) and vasculature entry points (normal or ruptured) further described by :cite:p:`franssen2019`.
 
@@ -240,41 +243,44 @@ Extravasation rules follow the setup in the original paper :cite:p:`franssen2019
 
 The default parameters are:
 
-+--------------------------+--------------------------------------------------------------------------+
-|        Variable          |     Dimensional Value                                                    |
-+==========================+==========================================================================+
-| :math:`\Delta t`         | :math:`40` s                                                             |
-+--------------------------+--------------------------------------------------------------------------+
-| :math:`\Delta x`         | :math:`1\times 10^{-3}` cm                                               |
-+--------------------------+--------------------------------------------------------------------------+
-| :math:`\Delta t_a`       | :math:`40` s                                                             |
-+--------------------------+--------------------------------------------------------------------------+
-| :math:`\Delta x_a`       | :math:`1\times 10^{-3}` cm                                               |
-+--------------------------+--------------------------------------------------------------------------+
-| :math:`D_{M}`            | :math:`1\times 10^{-10}` cm :math:`^{2}` s :math:`^{-1}`                 |
-+--------------------------+--------------------------------------------------------------------------+
-| :math:`D_{E}`            | :math:`5\times 10^{-11}` cm :math:`^{2}` s :math:`^{-}` :math:`^{1}`     |
-+--------------------------+--------------------------------------------------------------------------+
-| :math:`\Phi _{M}`        | :math:`2.6\times 10^{3}` cm :math:`^{2}` M :math:`^{-1}` s :math:`^{-1}` |
-+--------------------------+--------------------------------------------------------------------------+
-| :math:`\Phi _{E}`        | :math:`2.6\times 10^{3}` cm :math:`^{2}` M :math:`^{-1}` s :math:`^{-1}` |
-+--------------------------+--------------------------------------------------------------------------+
-| :math:`D_{m}`            | :math:`1\times 10^{-9}` cm :math:`^{2}` s :math:`^{-1}`                  |
-+--------------------------+--------------------------------------------------------------------------+
-| :math:`\Theta`           | :math:`4.875\times 10^{-6}` M :math:`^{-1}` s :math:`^{-1}`              |
-+--------------------------+--------------------------------------------------------------------------+
-| :math:`\Lambda`          | :math:`2.5\times 10^{-6}` s :math:`^{-1}`                                |
-+--------------------------+--------------------------------------------------------------------------+
-| :math:`\Gamma _{1}`      | :math:`1\times 10^{-4}` s :math:`^{-1}`                                  |
-+--------------------------+--------------------------------------------------------------------------+
-| :math:`\Gamma _{2}`      | :math:`1\times 10^{-4}` M :math:`^{-1}` s :math:`^{-1}`                  |
-+--------------------------+--------------------------------------------------------------------------+
-| :math:`T_{V}`            | :math:`7.2\times 10^{3}` s                                               |
-+--------------------------+--------------------------------------------------------------------------+
-| :math:`T_{M}`            | :math:`1.2\times 10^{5}` s                                               |
-+--------------------------+--------------------------------------------------------------------------+
-| :math:`T_{E}`            | :math:`8\times 10^{4}` s                                                 |
-+--------------------------+--------------------------------------------------------------------------+
+.. table::
+   :align: center
+
+   +--------------------------+--------------------------------------------------------------------------+
+   |        Variable          |     Dimensional Value                                                    |
+   +==========================+==========================================================================+
+   | :math:`\Delta t`         | :math:`40` s                                                             |
+   +--------------------------+--------------------------------------------------------------------------+
+   | :math:`\Delta x`         | :math:`1\times 10^{-3}` cm                                               |
+   +--------------------------+--------------------------------------------------------------------------+
+   | :math:`\Delta t_a`       | :math:`40` s                                                             |
+   +--------------------------+--------------------------------------------------------------------------+
+   | :math:`\Delta x_a`       | :math:`1\times 10^{-3}` cm                                               |
+   +--------------------------+--------------------------------------------------------------------------+
+   | :math:`D_{M}`            | :math:`1\times 10^{-10}` cm :math:`^{2}` s :math:`^{-1}`                 |
+   +--------------------------+--------------------------------------------------------------------------+
+   | :math:`D_{E}`            | :math:`5\times 10^{-11}` cm :math:`^{2}` s :math:`^{-}` :math:`^{1}`     |
+   +--------------------------+--------------------------------------------------------------------------+
+   | :math:`\Phi _{M}`        | :math:`2.6\times 10^{3}` cm :math:`^{2}` M :math:`^{-1}` s :math:`^{-1}` |
+   +--------------------------+--------------------------------------------------------------------------+
+   | :math:`\Phi _{E}`        | :math:`2.6\times 10^{3}` cm :math:`^{2}` M :math:`^{-1}` s :math:`^{-1}` |
+   +--------------------------+--------------------------------------------------------------------------+
+   | :math:`D_{m}`            | :math:`1\times 10^{-9}` cm :math:`^{2}` s :math:`^{-1}`                  |
+   +--------------------------+--------------------------------------------------------------------------+
+   | :math:`\Theta`           | :math:`4.875\times 10^{-6}` M :math:`^{-1}` s :math:`^{-1}`              |
+   +--------------------------+--------------------------------------------------------------------------+
+   | :math:`\Lambda`          | :math:`2.5\times 10^{-6}` s :math:`^{-1}`                                |
+   +--------------------------+--------------------------------------------------------------------------+
+   | :math:`\Gamma _{1}`      | :math:`1\times 10^{-4}` s :math:`^{-1}`                                  |
+   +--------------------------+--------------------------------------------------------------------------+
+   | :math:`\Gamma _{2}`      | :math:`1\times 10^{-4}` M :math:`^{-1}` s :math:`^{-1}`                  |
+   +--------------------------+--------------------------------------------------------------------------+
+   | :math:`T_{V}`            | :math:`7.2\times 10^{3}` s                                               |
+   +--------------------------+--------------------------------------------------------------------------+
+   | :math:`T_{M}`            | :math:`1.2\times 10^{5}` s                                               |
+   +--------------------------+--------------------------------------------------------------------------+
+   | :math:`T_{E}`            | :math:`8\times 10^{4}` s                                                 |
+   +--------------------------+--------------------------------------------------------------------------+
 
 Examples
 =======
@@ -286,7 +292,7 @@ With the default values, the following output was obtained:
 .. figure:: 6_images.png
    :align: center
 
-   **Later snapshot of our simulations for cancer cell spread and ECM and MMP2 evolution in the primary and secondary metastatic site, grid 1 (left) and grid 2 (right) after approximately 12.78 days.** Parameters as in Table :numref:`table-sim_parameters` with initial distribution centered around (1 mm,1 mm) and total initial size = 388 cells. In the top row, the blue color denotes mesenchymal cells, the orange color denotes epithelial cells. The intensity of the color represents the number of cells (from 0 to Q) in that particular grid point. The red grid points represent entry-points to the vasculature, with circles intact vessels and crosses representing ruptured vessels. In the middle row, we plot the corresponding evolution of the density of the extracellular matrix at the same time points. In the last row we plot the spatial distribution of MMP2:
+   **Later snapshot of our simulations for cancer cell spread and ECM and MMP2 evolution in the primary and secondary metastatic site, grid 1 (left) and grid 2 (right) after approximately 12.78 days.** Parameters as in Table :numref:`table-sim-parameters` with initial distribution centered around (1 mm,1 mm) and total initial size = 388 cells. In the top row, the blue color denotes mesenchymal cells, the orange color denotes epithelial cells. The intensity of the color represents the number of cells (from 0 to Q) in that particular grid point. The red grid points represent entry-points to the vasculature, with circles intact vessels and crosses representing ruptured vessels. In the middle row, we plot the corresponding evolution of the density of the extracellular matrix at the same time points. In the last row we plot the spatial distribution of MMP2:
 
 .. _figure-dynamics:
 

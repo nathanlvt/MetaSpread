@@ -151,7 +151,7 @@ where :math:`i,j` reflect the grid point (:math:`i,j`) and :math:`n` the time-po
 
 .. _figure-flowchart:
 
-.. figure::flowchart.png
+.. figure:: flowchart.png
    :align: center
 
    **Diagram summarizing the key algorithmic steps**
